@@ -6,9 +6,10 @@ const schema = mongoose.Schema({
 	sku: {
 		type: 'string',
 		required: true,
-	}
+	},
+	image: String,
 });
 
-const Product = mongoose.model('Product', schema);
+const Product = mongoose.models.Product || mongoose.model('Product', schema);
 module.exports = Product;
 

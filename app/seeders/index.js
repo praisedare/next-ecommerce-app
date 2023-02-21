@@ -11,7 +11,7 @@ const seeders = [
 
 	await mongoDBConnect();
 
-	console.log('Running Seeders');
+	console.log('Running Seeders\n');
 
 	const startTime = Date.now();
 
@@ -20,11 +20,11 @@ const seeders = [
 		console.log(chalk.gray(`Running ${seeder.name}...`));
 		await seeder();
 		const tt = Date.now() - startTime;
-		console.log(chalk.bgGreen.black('Done'), chalk.gray(`in ${ tt.toLocaleString() }ms`));
+		console.log(chalk.bgGreen.black('Done'), chalk.gray(`in ${ tt.toLocaleString() }ms`), '\n');
 	}
 
 	const tt = Date.now() - startTime;
-	console.log(chalk.green('\nAll seeders ran successfully'));
+	console.log(chalk.green('All seeders ran successfully'));
 	console.log(chalk.bgGray.black(`Took a total of ${ (tt/1000).toLocaleString() }s`));
 
 	process.exit();

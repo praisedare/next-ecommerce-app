@@ -1,4 +1,4 @@
-const mongoDBConnect = require('./lib/mongodb')
+const mongoDBConnect = require('./app/lib/mongodb');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
