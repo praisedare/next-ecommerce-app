@@ -1,16 +1,26 @@
 import {makeSerializable} from "@/app/lib/functions";
 import Product from "@/app/models/Product";
+import Link from "next/link";
 
 function IndexPage({ products }) {
-	return <>
-		<h1>Next Store</h1>
-		<ul>
-			{
-				products.map(product => (
-					<li key={product.id}>{product.name}</li>
-				))
-			}
-		</ul>
+    console.log('product one', products[0]);
+    const productsListing = products ?
+        (
+            <ul>
+                {
+                    products.map(product => (
+                        <li key={product._id}>
+                            <Link href={`/products/${product._id}`}>{product.name}</Link>
+                        </li>
+                    ))
+                }
+            </ul>
+        ) : (
+            <h2>No Products</h2>
+        );
+
+    return <>
+        { productsListing }
 	</>;
 }
 

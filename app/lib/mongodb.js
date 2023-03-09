@@ -11,12 +11,4 @@ const mongoDBConnect = async () => {
 	mongoose.connect(`${ uri }/${ db }`);
 }
 
-mongoose.model.prototype.toJSON = function() {
-	let data = {};
-	for (let prop in this)
-		data[prop] = this[prop].toString();
-
-	return data;
-}
-
 module.exports = mongoDBConnect;
