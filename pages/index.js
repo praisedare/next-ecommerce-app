@@ -4,8 +4,7 @@ import Link from "next/link";
 
 function IndexPage({ products }) {
     console.log('product one', products[0]);
-    const productsListing = products ?
-        (
+    const productsListing = products ? (
             <ul>
                 {
                     products.map(product => (
